@@ -22,9 +22,9 @@ MongoClient.connect(connectionString, {useUnifiedTopology: true })
 
                             console.log(results) // These are our database items...
 
-                         }).catch(error => console.error(error))
+                            res.render('index.ejs', { quotes:results })
 
-        res.sendFile('/Users/m21/dev/VS Code/Express/SimpleCRUDApp/index.html')
+                         }).catch(error => console.error(error))
     })
 
     app.post('/quotes', (req, res) => {
