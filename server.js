@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser= require('body-parser')
 const app = express()
 
+app.set('view engine', 'ejs')
 app.use(bodyParser.urlencoded({ extended: true }))
 const MongoClient = require('mongodb').MongoClient
 
@@ -22,7 +23,7 @@ MongoClient.connect(connectionString, {useUnifiedTopology: true })
                             console.log(results) // These are our database items...
 
                          }).catch(error => console.error(error))
-/
+
         res.sendFile('/Users/m21/dev/VS Code/Express/SimpleCRUDApp/index.html')
     })
 
